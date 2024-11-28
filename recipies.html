@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipies</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <section class="py-5">
+        <nav class="navbar bg-light">
+          <div class="container">
+            <form class="d-lg-flex d-none align-items-center position-relative">
+              <div class="input-group align-items-center">
+                <input
+                  aria-describedby="button-addon2"
+                  aria-label="Search"
+                  class="form-control"
+                  placeholder="Search"
+                  type="text"
+                />
+                <button
+                  class="btn bg-white border"
+                  id="button-addon2"
+                  type="button"
+                >
+                  <svg
+                    class="bi bi-search"
+                    fill="currentColor"
+                    height="20"
+                    viewbox="0 0 16 16"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </form>
+            <div>
+              <a class="navbar-brand" href="index.html"
+                ><img
+                  alt="logo"
+                  class="img-fluid"
+                  src="/web_dev_exam-main/imgs/logos/logo4.webp"
+                  width="100"
+                  height="500"
+              /></a>
+            </div>
+            <div class="d-block">
+              <div class="d-flex ms-auto">
+                <a
+                  class="text-dark border border-2 border-dark rounded-circle d-flex align-items-center justify-content-center"
+                  href=""
+                  style="height: 32px; width: 32px"
+                  ><svg
+                    class="bi bi-facebook-f"
+                    fill="currentColor"
+                    height="16"
+                    viewbox="0 0 24 24"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                    ></path></svg
+                ></a>
+                <a
+                  class="text-dark border border-2 border-dark rounded-circle d-flex align-items-center justify-content-center ms-2"
+                  href=""
+                  style="height: 32px; width: 32px"
+                  ><svg
+                    class="bi bi-twitter"
+                    fill="currentColor"
+                    height="16"
+                    viewbox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                    ></path></svg
+                ></a>
+                <a
+                  class="text-dark border border-2 border-dark rounded-circle d-flex align-items-center justify-content-center ms-2"
+                  href=""
+                  style="height: 32px; width: 32px"
+                  ><svg
+                    class="bi bi-instagram"
+                    fill="currentColor"
+                    height="16"
+                    viewbox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                    ></path></svg
+                ></a>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+          <div class="container">
+            <button
+              aria-controls="navbarSupportedContent8"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              class="navbar-toggler"
+              data-bs-target="#navbarSupportedContent8"
+              data-bs-toggle="collapse"
+              type="button"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent8">
+              <ul class="navbar-nav me-auto my-2 my-lg-0">
+                <li class="nav-item me-4">
+                  <a class="nav-link text-light" href="">Hero</a>
+                </li>
+                <li class="nav-item me-4">
+                  <a class="nav-link text-light" href=""
+                    >Sxetika me tin selida</a
+                  >
+                </li>
+                <li class="nav-item me-4">
+                  <a class="nav-link text-light" href="">Nees Geusis</a>
+                </li>
+                <li class="nav-item me-4">
+                  <a class="nav-link text-light" href="">Testimonials</a>
+                </li>
+              </ul>
+              <div class="d-flex">
+                <a
+                  class="d-flex align-items-center text-decoration-none text-light"
+                  href="tel:+1-541-754-3010"
+                  ><svg
+                    class="bi bi-phone"
+                    fill="currentColor"
+                    height="20"
+                    viewbox="0 0 16 16"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"
+                    ></path>
+                    <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path>
+                  </svg>
+                  <span class="ms-1">+1-541-754-3010</span></a
+                >
+                <a
+                  class="d-flex align-items-center ms-4 text-decoration-none text-light"
+                  href="mailto:info@gmail.com"
+                  ><svg
+                    class="bi bi-envelope"
+                    fill="currentColor"
+                    height="20"
+                    viewbox="0 0 16 16"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
+                    ></path>
+                  </svg>
+                  <span class="ms-2">info@gmail.com</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </nav>
+      </section>
+    </header>
+
+    <main>
+      <section class="py-5">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-4 mb-md-5">
+            <div class="col-xl-9 col-xxl-8">
+              <h2 class="display-5 fw-bold">Συνταγές</h2>
+              <p class="lead">
+                Στην πλατφόρμα θα βρείτε αναλυτικές οδηγίες για μοναδικές
+                συνταγές, όπως:
+              </p>
+            </div>
+          </div>
+          <hr>
+
+
+
+
+          <div class="row align-items-center gy-md-5">
+            <div class="col-md-6">
+              <div class="mt-4 mt-md-0">
+                <img
+                  alt=""
+                  class="img-fluid rounded my-md-0 my-4"
+                  src="/web_dev_exam-main/imgs/meals/1.jpg"
+                  height="300"
+                  width="550"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <a class="text-primary fw-semibold text-decoration-none" href=""
+                >RECIPE 1</a
+              >
+              <h2 class="fw-semibold my-1">
+                15-minute chicken & halloumi burgers
+              </h2>
+              <div class="text-muted">10.10.2017</div>
+              <h4 class="fw-semibold my-1">Instructions</h4>
+              <p class="my-4">
+                <ol>
+                    <li>Put the chicken breasts between two pieces of baking parchment and use a rolling pin to gently bash them until they are approximately 1cm thick.
+                        Cut each chicken breast into two even pieces.</li>
+                    <li>If you're using a frying pan, heat two frying pans over medium-high heat, with one of them containing oil.
+                        Fry the chicken in the oiled pan for 3-4 mins on each side until they are cooked through.Season the chicken, reduce the heat, drizzle in the chilli sauce and half of the lemon juice, and cook for an additional 1-2 mins until the sauce is reduced.
+                        Remove the chicken from the heat.</li>
+                    <li>If you're using an air-fryer, preheat it to 180C for 4 mins.
+                        Add the chicken to the air-fryer and cook for 12 mins.
+                        Drizzle over the chilli sauce and half the lemon juice and cook for an additional 1-2 mins until the chicken is cooked through and the sauce is reduced.
+                        Remove the chicken and keep it warm.</li>
+                    <li>While the chicken is cooking, toast the buns in the dry frying pan for 30 seconds.
+                        Transfer them to a plate.
+                        If you're using an air fryer, put the buns in the air fryer for 1-2 mins until they are warm.
+                        Increase the air fryer temperature to 200C.
+                        Add the halloumi to the air fryer basket and cook for 10 mins, turning halfway through, until it's golden.
+                        Toss the cabbage with the mayo and the remaining lemon juice.</li>
+                    <li>Spoon the hummus (or dip of your choice) into the toasted buns, then top with the rocket, chilli chicken, halloumi, and peppers.
+                        Drizzle with a little more chilli sauce, spoon over the cabbage, season with black pepper, and top with the bun lids.
+                        Serve with any extra cabbage on the side or a green salad.</li>
+                </ol>
+                <h4 class="fw-semibold my-1">Time needed:</h6>15 minutes
+                <br>
+                <h4 class="fw-semibold my-1">Difficulty</h6>6/10
+              </p>
+            </div>
+            <hr>
+
+
+
+
+            <div class="row align-items-center gy-md-5">
+                <div class="col-md-6">
+                  <div class="mt-4 mt-md-0">
+                    <img
+                      alt=""
+                      class="img-fluid rounded my-md-0 my-4"
+                      src="/web_dev_exam-main/imgs/meals/2.jpg"
+                      height="300"
+                      width="550"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <a class="text-primary fw-semibold text-decoration-none" href=""
+                    >RECIPE 2</a
+                  >
+                  <h2 class="fw-semibold my-1">
+                    Potato Salad (Olivier Salad)
+                  </h2>
+                  <div class="text-muted">10.10.2017</div>
+                  <h4 class="fw-semibold my-1">Instructions</h4>
+                  <p class="my-4">
+                    <ol>
+                        <li>Cut the potatoes and carrots into small uniform cubes.</li>
+                        <li>Place them in a large pot and fill with water.</li>
+                        <li>Add salt and vinegar.</li>
+                        <li>Bring it to a boil over medium high heat, and then reduce the heat to medium and continue to cook until the potatoes are cooked through, about 15 minutes.</li>
+                        <li>Drain the potatoes and let it cool to room temperature.</li>
+                        <li>Meanwhile, cut the sausage and pickles into small cubes, and chop the green onions.</li>
+                        <li>Cut the hard-boiled eggs into small cubes as well.</li>
+                        <li>If using fresh dill, chop them as well.</li>
+                        <li>In a large bowl, combine potatoes, carrots, sausage, pickles, peas and green onions.</li>
+                        <li>Add mayo and dill and mix until well combined.</li>
+                        <li>Salt and pepper to taste.</li>
+                        <li>Cover with a plastic wrap and refrigerate for at least 1 hour before serving.</li>
+                    </ol>
+                    <h4 class="fw-semibold my-1">Time needed:</h6>30 minutes
+                    <br>
+                    <h4 class="fw-semibold my-1">Difficulty</h6>5/10
+                  </p>
+                </div>
+
+
+
+                <div class="row align-items-center gy-md-5">
+                    <div class="col-md-6">
+                      <div class="mt-4 mt-md-0">
+                        <img
+                          alt=""
+                          class="img-fluid rounded my-md-0 my-4"
+                          src="/web_dev_exam-main/imgs/meals/3.jpg"
+                          height="300"
+                          width="550"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <a class="text-primary fw-semibold text-decoration-none" href=""
+                        >RECIPE 3</a
+                      >
+                      <h2 class="fw-semibold my-1">
+                        Cabbage Soup (Shchi)
+                      </h2>
+                      <div class="text-muted">10.10.2017</div>
+                      <h4 class="fw-semibold my-1">Instructions</h4>
+                      <p class="my-4">
+                        <ol>
+                            <li>Add the butter to a large Dutch oven or other heavy-duty pot over medium heat.</li>
+                            <li>When the butter has melted, add the onion and sauté until translucent.</li>
+                            <li>Add the cabbage, carrot, and celery.</li>
+                            <li>Sauté until the vegetables begin to soften, stirring frequently, about 3 minutes.</li>
+                            <li>Add the bay leaf and vegetable stock and bring to a boil over high heat.</li>
+                            <li>Reduce the heat to low and simmer, covered, until the vegetables are crisp-tender, about 15 minutes.</li>
+                            <li>Add the potatoes and bring it back to a boil over high heat.</li>
+                            <li>Reduce the heat to low and simmer, covered, until the potatoes are tender, about 10 minutes.</li>
+                            <li>Add the tomatoes (or undrained canned tomatoes) and bring the soup back to a boil over high heat.</li>
+                            <li>Reduce the heat to low and simmer, uncovered, for 5 minutes.</li>
+                            <li>Season to taste with salt and pepper.</li>
+                            <li>Remove and discard the bay leaf from the pot.</li>
+                            <li>Serve topped with fresh sour cream and fresh dill.</li>
+                        </ol>
+                        <h4 class="fw-semibold my-1">Time needed:</h6>60 minutes
+                        <br>
+                        <h4 class="fw-semibold my-1">Difficulty</h6>7/10
+                      </p>
+                    </div>
+
+
+
+                    <div class="row align-items-center gy-md-5">
+                        <div class="col-md-6">
+                          <div class="mt-4 mt-md-0">
+                            <img
+                              alt=""
+                              class="img-fluid rounded my-md-0 my-4"
+                              src="/web_dev_exam-main/imgs/meals/4.jpg"
+                              height="300"
+                              width="550"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <a class="text-primary fw-semibold text-decoration-none" href=""
+                            >RECIPE 4</a
+                          >
+                          <h2 class="fw-semibold my-1">
+                            Lamb Pilaf (Plov)
+                          </h2>
+                          <div class="text-muted">10.10.2017</div>
+                          <h4 class="fw-semibold my-1">Instructions</h4>
+                          <p class="my-4">
+                            <ol>
+                                <li>Place the raisins and prunes into a small bowl and pour over enough water to cover.</li>
+                                <li>Add lemon juice and let soak for at least 1 hour.</li>
+                                <li>Drain.</li>
+                                <li>Roughly chop the prunes.</li>
+                                <li>Meanwhile, heat the butter in a large pan, add the onion, and cook for 5 minutes.</li>
+                                <li>Add cubed lamb, ground lamb, and crushed garlic cloves.</li>
+                                <li>Fry for 5 minutes, stirring constantly until browned.</li>
+                                <li>Pour 2/3 cup (150 milliliters) of stock into the pan.</li>
+                                <li>Bring to a boil, then lower the heat, cover, and simmer for 1 hour, or until the lamb is tender.</li>
+                                <li>Add the remaining stock and bring to a boil.</li>
+                                <li>Add rinsed long-grain white rice and a large pinch of saffron.</li>
+                                <li>Stir, then cover, and simmer for 15 minutes, or until the rice is tender.</li>
+                                <li>Add the drained raisins, drained chopped prunes, and salt and pepper to taste.</li>
+                                <li>Heat through for a few minutes, then turn out onto a warmed serving dish and garnish with sprigs of flat-leaf parsley.</li>
+                                
+                            </ol>
+                            <h4 class="fw-semibold my-1">Time needed:</h6>2 hours
+                            <br>
+                            <h4 class="fw-semibold my-1">Difficulty</h6>9/10
+                          </p>
+                        </div>
+
+
+                        <div class="row align-items-center gy-md-5">
+                            <div class="col-md-6">
+                              <div class="mt-4 mt-md-0">
+                                <img
+                                  alt=""
+                                  class="img-fluid rounded my-md-0 my-4"
+                                  src="/web_dev_exam-main/imgs/meals/3.jpg"
+                                  height="300"
+                                  width="550"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <a class="text-primary fw-semibold text-decoration-none" href=""
+                                >RECIPE 5</a
+                              >
+                              <h2 class="fw-semibold my-1">
+                                French Omelette
+                              </h2>
+                              <div class="text-muted">10.10.2017</div>
+                              <h4 class="fw-semibold my-1">Instructions</h4>
+                              <p class="my-4">
+                                <ol>
+                                  <li>Get everything ready.</li>
+                                  <li>Warm a 20cm (measured across the top) non-stick frying pan on a medium heat.</li>
+                                  <li>Crack the eggs into a bowl and beat them with a fork so they break up and mix, but not as completely as you would for scrambled egg.</li>
+                                  <li>With the heat on medium-hot, drop one knob of butter into the pan.</li>
+                                  <li>It should bubble and sizzle, but not brown.</li>
+                                  <li>Season the eggs with the Parmesan and a little salt and pepper, and pour into the pan.</li>
+                                  <li>Let the eggs bubble slightly for a couple of seconds, then take a wooden fork or spatula and gently draw the mixture in from the sides of the pan a few times, so it gathers in folds in the centre.</li>
+                                  <li>Leave for a few seconds, then stir again to lightly combine uncooked egg with cooked.</li>
+                                  <li>Leave briefly again, and when partly cooked, stir a bit faster, stopping while there’s some barely cooked egg left.</li>
+                                  <li>With the pan flat on the heat, shake it back and forth a few times to settle the mixture.</li>
+                                  <li>It should slide easily in the pan and look soft and moist on top.</li>
+                                  <li>A quick burst of heat will brown the underside.</li>
+                                  <li>Grip the handle underneath.</li>
+                                  <li>Tilt the pan down away from you and let the omelette fall to the edge.</li>
+                                  <li>Fold the side nearest to you over by a third with your fork, and keep it rolling over, so the omelette tips onto a plate – or fold it in half, if that’s easier.</li>
+                                  <li>For a neat finish, cover the omelette with a piece of kitchen paper and plump it up a bit with your fingers.</li>
+                                  <li>Rub the other knob of butter over to glaze.</li>
+                                  <li>Serve immediately.</li>
+        
+                                </ol>
+                                <h4 class="fw-semibold my-1">Time needed:</h6>15 minutes
+                                <br>
+                                <h4 class="fw-semibold my-1">Difficulty</h6>3/10
+                              </p>
+                            </div>
+                            <div class="row align-items-center gy-md-5">
+                                <div class="col-md-6">
+                                  <div class="mt-4 mt-md-0">
+                                    <img
+                                      alt=""
+                                      class="img-fluid rounded my-md-0 my-4"
+                                      src="/web_dev_exam-main/imgs/meals/1.jpg"
+                                      height="300"
+                                      width="550"
+                                    />
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <a class="text-primary fw-semibold text-decoration-none" href=""
+                                    >RECIPE 1</a
+                                  >
+                                  <h2 class="fw-semibold my-1">
+                                    15-minute chicken & halloumi burgers
+                                  </h2>
+                                  <div class="text-muted">10.10.2017</div>
+                                  <h4 class="fw-semibold my-1">Instructions</h4>
+                                  <p class="my-4">
+                                    <ol>
+                                        <li>Put the chicken breasts between two pieces of baking parchment and use a rolling pin to gently bash them until they are approximately 1cm thick.
+                                            Cut each chicken breast into two even pieces.</li>
+                                        <li>If you're using a frying pan, heat two frying pans over medium-high heat, with one of them containing oil.
+                                            Fry the chicken in the oiled pan for 3-4 mins on each side until they are cooked through.Season the chicken, reduce the heat, drizzle in the chilli sauce and half of the lemon juice, and cook for an additional 1-2 mins until the sauce is reduced.
+                                            Remove the chicken from the heat.</li>
+                                        <li>If you're using an air-fryer, preheat it to 180C for 4 mins.
+                                            Add the chicken to the air-fryer and cook for 12 mins.
+                                            Drizzle over the chilli sauce and half the lemon juice and cook for an additional 1-2 mins until the chicken is cooked through and the sauce is reduced.
+                                            Remove the chicken and keep it warm.</li>
+                                        <li>While the chicken is cooking, toast the buns in the dry frying pan for 30 seconds.
+                                            Transfer them to a plate.
+                                            If you're using an air fryer, put the buns in the air fryer for 1-2 mins until they are warm.
+                                            Increase the air fryer temperature to 200C.
+                                            Add the halloumi to the air fryer basket and cook for 10 mins, turning halfway through, until it's golden.
+                                            Toss the cabbage with the mayo and the remaining lemon juice.</li>
+                                        <li>Spoon the hummus (or dip of your choice) into the toasted buns, then top with the rocket, chilli chicken, halloumi, and peppers.
+                                            Drizzle with a little more chilli sauce, spoon over the cabbage, season with black pepper, and top with the bun lids.
+                                            Serve with any extra cabbage on the side or a green salad.</li>
+                                    </ol>
+                                    <h4 class="fw-semibold my-1">Time needed:</h6>15 minutes
+                                    <br>
+                                    <h4 class="fw-semibold my-1">Difficulty</h6>6/10
+                                  </p>
+                                </div>
+                                <div class="row align-items-center gy-md-5">
+                                    <div class="col-md-6">
+                                      <div class="mt-4 mt-md-0">
+                                        <img
+                                          alt=""
+                                          class="img-fluid rounded my-md-0 my-4"
+                                          src="/web_dev_exam-main/imgs/meals/1.jpg"
+                                          height="300"
+                                          width="550"
+                                        />
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <a class="text-primary fw-semibold text-decoration-none" href=""
+                                        >RECIPE 1</a
+                                      >
+                                      <h2 class="fw-semibold my-1">
+                                        15-minute chicken & halloumi burgers
+                                      </h2>
+                                      <div class="text-muted">10.10.2017</div>
+                                      <h4 class="fw-semibold my-1">Instructions</h4>
+                                      <p class="my-4">
+                                        <ol>
+                                            <li>Put the chicken breasts between two pieces of baking parchment and use a rolling pin to gently bash them until they are approximately 1cm thick.
+                                                Cut each chicken breast into two even pieces.</li>
+                                            <li>If you're using a frying pan, heat two frying pans over medium-high heat, with one of them containing oil.
+                                                Fry the chicken in the oiled pan for 3-4 mins on each side until they are cooked through.Season the chicken, reduce the heat, drizzle in the chilli sauce and half of the lemon juice, and cook for an additional 1-2 mins until the sauce is reduced.
+                                                Remove the chicken from the heat.</li>
+                                            <li>If you're using an air-fryer, preheat it to 180C for 4 mins.
+                                                Add the chicken to the air-fryer and cook for 12 mins.
+                                                Drizzle over the chilli sauce and half the lemon juice and cook for an additional 1-2 mins until the chicken is cooked through and the sauce is reduced.
+                                                Remove the chicken and keep it warm.</li>
+                                            <li>While the chicken is cooking, toast the buns in the dry frying pan for 30 seconds.
+                                                Transfer them to a plate.
+                                                If you're using an air fryer, put the buns in the air fryer for 1-2 mins until they are warm.
+                                                Increase the air fryer temperature to 200C.
+                                                Add the halloumi to the air fryer basket and cook for 10 mins, turning halfway through, until it's golden.
+                                                Toss the cabbage with the mayo and the remaining lemon juice.</li>
+                                            <li>Spoon the hummus (or dip of your choice) into the toasted buns, then top with the rocket, chilli chicken, halloumi, and peppers.
+                                                Drizzle with a little more chilli sauce, spoon over the cabbage, season with black pepper, and top with the bun lids.
+                                                Serve with any extra cabbage on the side or a green salad.</li>
+                                        </ol>
+                                        <h4 class="fw-semibold my-1">Time needed:</h6>15 minutes
+                                        <br>
+                                        <h4 class="fw-semibold my-1">Difficulty</h6>6/10
+                                      </p>
+                                    </div>
+                                    <div class="row align-items-center gy-md-5">
+                                        <div class="col-md-6">
+                                          <div class="mt-4 mt-md-0">
+                                            <img
+                                              alt=""
+                                              class="img-fluid rounded my-md-0 my-4"
+                                              src="/web_dev_exam-main/imgs/meals/1.jpg"
+                                              height="300"
+                                              width="550"
+                                            />
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <a class="text-primary fw-semibold text-decoration-none" href=""
+                                            >RECIPE 1</a
+                                          >
+                                          <h2 class="fw-semibold my-1">
+                                            15-minute chicken & halloumi burgers
+                                          </h2>
+                                          <div class="text-muted">10.10.2017</div>
+                                          <h4 class="fw-semibold my-1">Instructions</h4>
+                                          <p class="my-4">
+                                            <ol>
+                                                <li>Put the chicken breasts between two pieces of baking parchment and use a rolling pin to gently bash them until they are approximately 1cm thick.
+                                                    Cut each chicken breast into two even pieces.</li>
+                                                <li>If you're using a frying pan, heat two frying pans over medium-high heat, with one of them containing oil.
+                                                    Fry the chicken in the oiled pan for 3-4 mins on each side until they are cooked through.Season the chicken, reduce the heat, drizzle in the chilli sauce and half of the lemon juice, and cook for an additional 1-2 mins until the sauce is reduced.
+                                                    Remove the chicken from the heat.</li>
+                                                <li>If you're using an air-fryer, preheat it to 180C for 4 mins.
+                                                    Add the chicken to the air-fryer and cook for 12 mins.
+                                                    Drizzle over the chilli sauce and half the lemon juice and cook for an additional 1-2 mins until the chicken is cooked through and the sauce is reduced.
+                                                    Remove the chicken and keep it warm.</li>
+                                                <li>While the chicken is cooking, toast the buns in the dry frying pan for 30 seconds.
+                                                    Transfer them to a plate.
+                                                    If you're using an air fryer, put the buns in the air fryer for 1-2 mins until they are warm.
+                                                    Increase the air fryer temperature to 200C.
+                                                    Add the halloumi to the air fryer basket and cook for 10 mins, turning halfway through, until it's golden.
+                                                    Toss the cabbage with the mayo and the remaining lemon juice.</li>
+                                                <li>Spoon the hummus (or dip of your choice) into the toasted buns, then top with the rocket, chilli chicken, halloumi, and peppers.
+                                                    Drizzle with a little more chilli sauce, spoon over the cabbage, season with black pepper, and top with the bun lids.
+                                                    Serve with any extra cabbage on the side or a green salad.</li>
+                                            </ol>
+                                            <h4 class="fw-semibold my-1">Time needed:</h6>15 minutes
+                                            <br>
+                                            <h4 class="fw-semibold my-1">Difficulty</h6>6/10
+                                          </p>
+                                        </div>
+                                        <div class="row align-items-center gy-md-5">
+                                            <div class="col-md-6">
+                                              <div class="mt-4 mt-md-0">
+                                                <img
+                                                  alt=""
+                                                  class="img-fluid rounded my-md-0 my-4"
+                                                  src="/web_dev_exam-main/imgs/meals/1.jpg"
+                                                  height="300"
+                                                  width="550"
+                                                />
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <a class="text-primary fw-semibold text-decoration-none" href=""
+                                                >RECIPE 1</a
+                                              >
+                                              <h2 class="fw-semibold my-1">
+                                                15-minute chicken & halloumi burgers
+                                              </h2>
+                                              <div class="text-muted">10.10.2017</div>
+                                              <h4 class="fw-semibold my-1">Instructions</h4>
+                                              <p class="my-4">
+                                                <ol>
+                                                    <li>Put the chicken breasts between two pieces of baking parchment and use a rolling pin to gently bash them until they are approximately 1cm thick.
+                                                        Cut each chicken breast into two even pieces.</li>
+                                                    <li>If you're using a frying pan, heat two frying pans over medium-high heat, with one of them containing oil.
+                                                        Fry the chicken in the oiled pan for 3-4 mins on each side until they are cooked through.Season the chicken, reduce the heat, drizzle in the chilli sauce and half of the lemon juice, and cook for an additional 1-2 mins until the sauce is reduced.
+                                                        Remove the chicken from the heat.</li>
+                                                    <li>If you're using an air-fryer, preheat it to 180C for 4 mins.
+                                                        Add the chicken to the air-fryer and cook for 12 mins.
+                                                        Drizzle over the chilli sauce and half the lemon juice and cook for an additional 1-2 mins until the chicken is cooked through and the sauce is reduced.
+                                                        Remove the chicken and keep it warm.</li>
+                                                    <li>While the chicken is cooking, toast the buns in the dry frying pan for 30 seconds.
+                                                        Transfer them to a plate.
+                                                        If you're using an air fryer, put the buns in the air fryer for 1-2 mins until they are warm.
+                                                        Increase the air fryer temperature to 200C.
+                                                        Add the halloumi to the air fryer basket and cook for 10 mins, turning halfway through, until it's golden.
+                                                        Toss the cabbage with the mayo and the remaining lemon juice.</li>
+                                                    <li>Spoon the hummus (or dip of your choice) into the toasted buns, then top with the rocket, chilli chicken, halloumi, and peppers.
+                                                        Drizzle with a little more chilli sauce, spoon over the cabbage, season with black pepper, and top with the bun lids.
+                                                        Serve with any extra cabbage on the side or a green salad.</li>
+                                                </ol>
+                                                <h4 class="fw-semibold my-1">Time needed:</h6>15 minutes
+                                                <br>
+                                                <h4 class="fw-semibold my-1">Difficulty</h6>6/10
+                                              </p>
+                                            </div>
+                                            <div class="row align-items-center gy-md-5">
+                                                <div class="col-md-6">
+                                                  <div class="mt-4 mt-md-0">
+                                                    <img
+                                                      alt=""
+                                                      class="img-fluid rounded my-md-0 my-4"
+                                                      src="/web_dev_exam-main/imgs/meals/1.jpg"
+                                                      height="300"
+                                                      width="550"
+                                                    />
+                                                  </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                  <a class="text-primary fw-semibold text-decoration-none" href=""
+                                                    >RECIPE 1</a
+                                                  >
+                                                  <h2 class="fw-semibold my-1">
+                                                    15-minute chicken & halloumi burgers
+                                                  </h2>
+                                                  <div class="text-muted">10.10.2017</div>
+                                                  <h4 class="fw-semibold my-1">Instructions</h4>
+                                                  <p class="my-4">
+                                                    <ol>
+                                                        <li>Put the chicken breasts between two pieces of baking parchment and use a rolling pin to gently bash them until they are approximately 1cm thick.
+                                                            Cut each chicken breast into two even pieces.</li>
+                                                        <li>If you're using a frying pan, heat two frying pans over medium-high heat, with one of them containing oil.
+                                                            Fry the chicken in the oiled pan for 3-4 mins on each side until they are cooked through.Season the chicken, reduce the heat, drizzle in the chilli sauce and half of the lemon juice, and cook for an additional 1-2 mins until the sauce is reduced.
+                                                            Remove the chicken from the heat.</li>
+                                                        <li>If you're using an air-fryer, preheat it to 180C for 4 mins.
+                                                            Add the chicken to the air-fryer and cook for 12 mins.
+                                                            Drizzle over the chilli sauce and half the lemon juice and cook for an additional 1-2 mins until the chicken is cooked through and the sauce is reduced.
+                                                            Remove the chicken and keep it warm.</li>
+                                                        <li>While the chicken is cooking, toast the buns in the dry frying pan for 30 seconds.
+                                                            Transfer them to a plate.
+                                                            If you're using an air fryer, put the buns in the air fryer for 1-2 mins until they are warm.
+                                                            Increase the air fryer temperature to 200C.
+                                                            Add the halloumi to the air fryer basket and cook for 10 mins, turning halfway through, until it's golden.
+                                                            Toss the cabbage with the mayo and the remaining lemon juice.</li>
+                                                        <li>Spoon the hummus (or dip of your choice) into the toasted buns, then top with the rocket, chilli chicken, halloumi, and peppers.
+                                                            Drizzle with a little more chilli sauce, spoon over the cabbage, season with black pepper, and top with the bun lids.
+                                                            Serve with any extra cabbage on the side or a green salad.</li>
+                                                    </ol>
+                                                    <h4 class="fw-semibold my-1">Time needed:</h6>15 minutes
+                                                    <br>
+                                                    <h4 class="fw-semibold my-1">Difficulty</h6>6/10
+                                                  </p>
+                                                </div>
+                                                <div class="row align-items-center gy-md-5">
+                                                    <div class="col-md-6">
+                                                      <div class="mt-4 mt-md-0">
+                                                        <img
+                                                          alt=""
+                                                          class="img-fluid rounded my-md-0 my-4"
+                                                          src="/web_dev_exam-main/imgs/meals/1.jpg"
+                                                          height="300"
+                                                          width="550"
+                                                        />
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                      <a class="text-primary fw-semibold text-decoration-none" href=""
+                                                        >RECIPE 1</a
+                                                      >
+                                                      <h2 class="fw-semibold my-1">
+                                                        15-minute chicken & halloumi burgers
+                                                      </h2>
+                                                      <div class="text-muted">10.10.2017</div>
+                                                      <h4 class="fw-semibold my-1">Instructions</h4>
+                                                      <p class="my-4">
+                                                        <ol>
+                                                            <li>Put the chicken breasts between two pieces of baking parchment and use a rolling pin to gently bash them until they are approximately 1cm thick.
+                                                                Cut each chicken breast into two even pieces.</li>
+                                                            <li>If you're using a frying pan, heat two frying pans over medium-high heat, with one of them containing oil.
+                                                                Fry the chicken in the oiled pan for 3-4 mins on each side until they are cooked through.Season the chicken, reduce the heat, drizzle in the chilli sauce and half of the lemon juice, and cook for an additional 1-2 mins until the sauce is reduced.
+                                                                Remove the chicken from the heat.</li>
+                                                            <li>If you're using an air-fryer, preheat it to 180C for 4 mins.
+                                                                Add the chicken to the air-fryer and cook for 12 mins.
+                                                                Drizzle over the chilli sauce and half the lemon juice and cook for an additional 1-2 mins until the chicken is cooked through and the sauce is reduced.
+                                                                Remove the chicken and keep it warm.</li>
+                                                            <li>While the chicken is cooking, toast the buns in the dry frying pan for 30 seconds.
+                                                                Transfer them to a plate.
+                                                                If you're using an air fryer, put the buns in the air fryer for 1-2 mins until they are warm.
+                                                                Increase the air fryer temperature to 200C.
+                                                                Add the halloumi to the air fryer basket and cook for 10 mins, turning halfway through, until it's golden.
+                                                                Toss the cabbage with the mayo and the remaining lemon juice.</li>
+                                                            <li>Spoon the hummus (or dip of your choice) into the toasted buns, then top with the rocket, chilli chicken, halloumi, and peppers.
+                                                                Drizzle with a little more chilli sauce, spoon over the cabbage, season with black pepper, and top with the bun lids.
+                                                                Serve with any extra cabbage on the side or a green salad.</li>
+                                                        </ol>
+                                                        <h4 class="fw-semibold my-1">Time needed:</h6>15 minutes
+                                                        <br>
+                                                        <h4 class="fw-semibold my-1">Difficulty</h6>6/10
+                                                      </p>
+                                                    </div>
+                                                    <div class="row align-items-center gy-md-5">
+                                                        <div class="col-md-6">
+                                                          <div class="mt-4 mt-md-0">
+                                                            <img
+                                                              alt=""
+                                                              class="img-fluid rounded my-md-0 my-4"
+                                                              src="/web_dev_exam-main/imgs/meals/1.jpg"
+                                                              height="300"
+                                                              width="550"
+                                                            />
+                                                          </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                          <a class="text-primary fw-semibold text-decoration-none" href=""
+                                                            >RECIPE 1</a
+                                                          >
+                                                          <h2 class="fw-semibold my-1">
+                                                            15-minute chicken & halloumi burgers
+                                                          </h2>
+                                                          <div class="text-muted">10.10.2017</div>
+                                                          <h4 class="fw-semibold my-1">Instructions</h4>
+                                                          <p class="my-4">
+                                                            <ol>
+                                                                <li>Put the chicken breasts between two pieces of baking parchment and use a rolling pin to gently bash them until they are approximately 1cm thick.
+                                                                    Cut each chicken breast into two even pieces.</li>
+                                                                <li>If you're using a frying pan, heat two frying pans over medium-high heat, with one of them containing oil.
+                                                                    Fry the chicken in the oiled pan for 3-4 mins on each side until they are cooked through.Season the chicken, reduce the heat, drizzle in the chilli sauce and half of the lemon juice, and cook for an additional 1-2 mins until the sauce is reduced.
+                                                                    Remove the chicken from the heat.</li>
+                                                                <li>If you're using an air-fryer, preheat it to 180C for 4 mins.
+                                                                    Add the chicken to the air-fryer and cook for 12 mins.
+                                                                    Drizzle over the chilli sauce and half the lemon juice and cook for an additional 1-2 mins until the chicken is cooked through and the sauce is reduced.
+                                                                    Remove the chicken and keep it warm.</li>
+                                                                <li>While the chicken is cooking, toast the buns in the dry frying pan for 30 seconds.
+                                                                    Transfer them to a plate.
+                                                                    If you're using an air fryer, put the buns in the air fryer for 1-2 mins until they are warm.
+                                                                    Increase the air fryer temperature to 200C.
+                                                                    Add the halloumi to the air fryer basket and cook for 10 mins, turning halfway through, until it's golden.
+                                                                    Toss the cabbage with the mayo and the remaining lemon juice.</li>
+                                                                <li>Spoon the hummus (or dip of your choice) into the toasted buns, then top with the rocket, chilli chicken, halloumi, and peppers.
+                                                                    Drizzle with a little more chilli sauce, spoon over the cabbage, season with black pepper, and top with the bun lids.
+                                                                    Serve with any extra cabbage on the side or a green salad.</li>
+                                                            </ol>
+                                                            <h4 class="fw-semibold my-1">Time needed:</h6>15 minutes
+                                                            <br>
+                                                            <h4 class="fw-semibold my-1">Difficulty</h6>6/10
+                                                          </p>
+                                                        </div>
+                                                        <div class="row align-items-center gy-md-5">
+                                                            <div class="col-md-6">
+                                                              <div class="mt-4 mt-md-0">
+                                                                <img
+                                                                  alt=""
+                                                                  class="img-fluid rounded my-md-0 my-4"
+                                                                  src="/web_dev_exam-main/imgs/meals/1.jpg"
+                                                                  height="300"
+                                                                  width="550"
+                                                                />
+                                                              </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                              <a class="text-primary fw-semibold text-decoration-none" href=""
+                                                                >RECIPE 1</a
+                                                              >
+                                                              <h2 class="fw-semibold my-1">
+                                                                15-minute chicken & halloumi burgers
+                                                              </h2>
+                                                              <div class="text-muted">10.10.2017</div>
+                                                              <h4 class="fw-semibold my-1">Instructions</h4>
+                                                              <p class="my-4">
+                                                                <ol>
+                                                                    <li>Put the chicken breasts between two pieces of baking parchment and use a rolling pin to gently bash them until they are approximately 1cm thick.
+                                                                        Cut each chicken breast into two even pieces.</li>
+                                                                    <li>If you're using a frying pan, heat two frying pans over medium-high heat, with one of them containing oil.
+                                                                        Fry the chicken in the oiled pan for 3-4 mins on each side until they are cooked through.Season the chicken, reduce the heat, drizzle in the chilli sauce and half of the lemon juice, and cook for an additional 1-2 mins until the sauce is reduced.
+                                                                        Remove the chicken from the heat.</li>
+                                                                    <li>If you're using an air-fryer, preheat it to 180C for 4 mins.
+                                                                        Add the chicken to the air-fryer and cook for 12 mins.
+                                                                        Drizzle over the chilli sauce and half the lemon juice and cook for an additional 1-2 mins until the chicken is cooked through and the sauce is reduced.
+                                                                        Remove the chicken and keep it warm.</li>
+                                                                    <li>While the chicken is cooking, toast the buns in the dry frying pan for 30 seconds.
+                                                                        Transfer them to a plate.
+                                                                        If you're using an air fryer, put the buns in the air fryer for 1-2 mins until they are warm.
+                                                                        Increase the air fryer temperature to 200C.
+                                                                        Add the halloumi to the air fryer basket and cook for 10 mins, turning halfway through, until it's golden.
+                                                                        Toss the cabbage with the mayo and the remaining lemon juice.</li>
+                                                                    <li>Spoon the hummus (or dip of your choice) into the toasted buns, then top with the rocket, chilli chicken, halloumi, and peppers.
+                                                                        Drizzle with a little more chilli sauce, spoon over the cabbage, season with black pepper, and top with the bun lids.
+                                                                        Serve with any extra cabbage on the side or a green salad.</li>
+                                                                </ol>
+                                                                <h4 class="fw-semibold my-1">Time needed:</h6>15 minutes
+                                                                <br>
+                                                                <h4 class="fw-semibold my-1">Difficulty</h6>6/10
+                                                              </p>
+                                                            </div>
+                                                            <div class="row align-items-center gy-md-5">
+                                                                <div class="col-md-6">
+                                                                  <div class="mt-4 mt-md-0">
+                                                                    <img
+                                                                      alt=""
+                                                                      class="img-fluid rounded my-md-0 my-4"
+                                                                      src="/web_dev_exam-main/imgs/meals/1.jpg"
+                                                                      height="300"
+                                                                      width="550"
+                                                                    />
+                                                                  </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                  <a class="text-primary fw-semibold text-decoration-none" href=""
+                                                                    >RECIPE 1</a
+                                                                  >
+                                                                  <h2 class="fw-semibold my-1">
+                                                                    15-minute chicken & halloumi burgers
+                                                                  </h2>
+                                                                  <div class="text-muted">10.10.2017</div>
+                                                                  <h4 class="fw-semibold my-1">Instructions</h4>
+                                                                  <p class="my-4">
+                                                                    <ol>
+                                                                        <li>Put the chicken breasts between two pieces of baking parchment and use a rolling pin to gently bash them until they are approximately 1cm thick.
+                                                                            Cut each chicken breast into two even pieces.</li>
+                                                                        <li>If you're using a frying pan, heat two frying pans over medium-high heat, with one of them containing oil.
+                                                                            Fry the chicken in the oiled pan for 3-4 mins on each side until they are cooked through.Season the chicken, reduce the heat, drizzle in the chilli sauce and half of the lemon juice, and cook for an additional 1-2 mins until the sauce is reduced.
+                                                                            Remove the chicken from the heat.</li>
+                                                                        <li>If you're using an air-fryer, preheat it to 180C for 4 mins.
+                                                                            Add the chicken to the air-fryer and cook for 12 mins.
+                                                                            Drizzle over the chilli sauce and half the lemon juice and cook for an additional 1-2 mins until the chicken is cooked through and the sauce is reduced.
+                                                                            Remove the chicken and keep it warm.</li>
+                                                                        <li>While the chicken is cooking, toast the buns in the dry frying pan for 30 seconds.
+                                                                            Transfer them to a plate.
+                                                                            If you're using an air fryer, put the buns in the air fryer for 1-2 mins until they are warm.
+                                                                            Increase the air fryer temperature to 200C.
+                                                                            Add the halloumi to the air fryer basket and cook for 10 mins, turning halfway through, until it's golden.
+                                                                            Toss the cabbage with the mayo and the remaining lemon juice.</li>
+                                                                        <li>Spoon the hummus (or dip of your choice) into the toasted buns, then top with the rocket, chilli chicken, halloumi, and peppers.
+                                                                            Drizzle with a little more chilli sauce, spoon over the cabbage, season with black pepper, and top with the bun lids.
+                                                                            Serve with any extra cabbage on the side or a green salad.</li>
+                                                                    </ol>
+                                                                    <h4 class="fw-semibold my-1">Time needed:</h6>15 minutes
+                                                                    <br>
+                                                                    <h4 class="fw-semibold my-1">Difficulty</h6>6/10
+                                                                  </p>
+                                                                </div>
+                                                                <div class="row align-items-center gy-md-5">
+                                                                    <div class="col-md-6">
+                                                                      <div class="mt-4 mt-md-0">
+                                                                        <img
+                                                                          alt=""
+                                                                          class="img-fluid rounded my-md-0 my-4"
+                                                                          src="/web_dev_exam-main/imgs/meals/1.jpg"
+                                                                          height="300"
+                                                                          width="550"
+                                                                        />
+                                                                      </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                      <a class="text-primary fw-semibold text-decoration-none" href=""
+                                                                        >RECIPE 1</a
+                                                                      >
+                                                                      <h2 class="fw-semibold my-1">
+                                                                        15-minute chicken & halloumi burgers
+                                                                      </h2>
+                                                                      <div class="text-muted">10.10.2017</div>
+                                                                      <h4 class="fw-semibold my-1">Instructions</h4>
+                                                                      <p class="my-4">
+                                                                        <ol>
+                                                                            <li>Put the chicken breasts between two pieces of baking parchment and use a rolling pin to gently bash them until they are approximately 1cm thick.
+                                                                                Cut each chicken breast into two even pieces.</li>
+                                                                            <li>If you're using a frying pan, heat two frying pans over medium-high heat, with one of them containing oil.
+                                                                                Fry the chicken in the oiled pan for 3-4 mins on each side until they are cooked through.Season the chicken, reduce the heat, drizzle in the chilli sauce and half of the lemon juice, and cook for an additional 1-2 mins until the sauce is reduced.
+                                                                                Remove the chicken from the heat.</li>
+                                                                            <li>If you're using an air-fryer, preheat it to 180C for 4 mins.
+                                                                                Add the chicken to the air-fryer and cook for 12 mins.
+                                                                                Drizzle over the chilli sauce and half the lemon juice and cook for an additional 1-2 mins until the chicken is cooked through and the sauce is reduced.
+                                                                                Remove the chicken and keep it warm.</li>
+                                                                            <li>While the chicken is cooking, toast the buns in the dry frying pan for 30 seconds.
+                                                                                Transfer them to a plate.
+                                                                                If you're using an air fryer, put the buns in the air fryer for 1-2 mins until they are warm.
+                                                                                Increase the air fryer temperature to 200C.
+                                                                                Add the halloumi to the air fryer basket and cook for 10 mins, turning halfway through, until it's golden.
+                                                                                Toss the cabbage with the mayo and the remaining lemon juice.</li>
+                                                                            <li>Spoon the hummus (or dip of your choice) into the toasted buns, then top with the rocket, chilli chicken, halloumi, and peppers.
+                                                                                Drizzle with a little more chilli sauce, spoon over the cabbage, season with black pepper, and top with the bun lids.
+                                                                                Serve with any extra cabbage on the side or a green salad.</li>
+                                                                        </ol>
+                                                                        <h4 class="fw-semibold my-1">Time needed:</h6>15 minutes
+                                                                        <br>
+                                                                        <h4 class="fw-semibold my-1">Difficulty</h6>6/10
+                                                                      </p>
+                                                                    </div>
+                                                                    <div class="row align-items-center gy-md-5">
+                                                                        <div class="col-md-6">
+                                                                          <div class="mt-4 mt-md-0">
+                                                                            <img
+                                                                              alt=""
+                                                                              class="img-fluid rounded my-md-0 my-4"
+                                                                              src="/web_dev_exam-main/imgs/meals/1.jpg"
+                                                                              height="300"
+                                                                              width="550"
+                                                                            />
+                                                                          </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                          <a class="text-primary fw-semibold text-decoration-none" href=""
+                                                                            >RECIPE 1</a
+                                                                          >
+                                                                          <h2 class="fw-semibold my-1">
+                                                                            15-minute chicken & halloumi burgers
+                                                                          </h2>
+                                                                          <div class="text-muted">10.10.2017</div>
+                                                                          <h4 class="fw-semibold my-1">Instructions</h4>
+                                                                          <p class="my-4">
+                                                                            <ol>
+                                                                                <li>Put the chicken breasts between two pieces of baking parchment and use a rolling pin to gently bash them until they are approximately 1cm thick.
+                                                                                    Cut each chicken breast into two even pieces.</li>
+                                                                                <li>If you're using a frying pan, heat two frying pans over medium-high heat, with one of them containing oil.
+                                                                                    Fry the chicken in the oiled pan for 3-4 mins on each side until they are cooked through.Season the chicken, reduce the heat, drizzle in the chilli sauce and half of the lemon juice, and cook for an additional 1-2 mins until the sauce is reduced.
+                                                                                    Remove the chicken from the heat.</li>
+                                                                                <li>If you're using an air-fryer, preheat it to 180C for 4 mins.
+                                                                                    Add the chicken to the air-fryer and cook for 12 mins.
+                                                                                    Drizzle over the chilli sauce and half the lemon juice and cook for an additional 1-2 mins until the chicken is cooked through and the sauce is reduced.
+                                                                                    Remove the chicken and keep it warm.</li>
+                                                                                <li>While the chicken is cooking, toast the buns in the dry frying pan for 30 seconds.
+                                                                                    Transfer them to a plate.
+                                                                                    If you're using an air fryer, put the buns in the air fryer for 1-2 mins until they are warm.
+                                                                                    Increase the air fryer temperature to 200C.
+                                                                                    Add the halloumi to the air fryer basket and cook for 10 mins, turning halfway through, until it's golden.
+                                                                                    Toss the cabbage with the mayo and the remaining lemon juice.</li>
+                                                                                <li>Spoon the hummus (or dip of your choice) into the toasted buns, then top with the rocket, chilli chicken, halloumi, and peppers.
+                                                                                    Drizzle with a little more chilli sauce, spoon over the cabbage, season with black pepper, and top with the bun lids.
+                                                                                    Serve with any extra cabbage on the side or a green salad.</li>
+                                                                            </ol>
+                                                                            <h4 class="fw-semibold my-1">Time needed:</h6>15 minutes
+                                                                            <br>
+                                                                            <h4 class="fw-semibold my-1">Difficulty</h6>6/10
+                                                                          </p>
+                                                                        </div>
+                                                                        <div class="row align-items-center gy-md-5">
+                                                                            <div class="col-md-6">
+                                                                              <div class="mt-4 mt-md-0">
+                                                                                <img
+                                                                                  alt=""
+                                                                                  class="img-fluid rounded my-md-0 my-4"
+                                                                                  src="/web_dev_exam-main/imgs/meals/1.jpg"
+                                                                                  height="300"
+                                                                                  width="550"
+                                                                                />
+                                                                              </div>
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                              <a class="text-primary fw-semibold text-decoration-none" href=""
+                                                                                >RECIPE 1</a
+                                                                              >
+                                                                              <h2 class="fw-semibold my-1">
+                                                                                15-minute chicken & halloumi burgers
+                                                                              </h2>
+                                                                              <div class="text-muted">10.10.2017</div>
+                                                                              <h4 class="fw-semibold my-1">Instructions</h4>
+                                                                              <p class="my-4">
+                                                                                <ol>
+                                                                                    <li>Put the chicken breasts between two pieces of baking parchment and use a rolling pin to gently bash them until they are approximately 1cm thick.
+                                                                                        Cut each chicken breast into two even pieces.</li>
+                                                                                    <li>If you're using a frying pan, heat two frying pans over medium-high heat, with one of them containing oil.
+                                                                                        Fry the chicken in the oiled pan for 3-4 mins on each side until they are cooked through.Season the chicken, reduce the heat, drizzle in the chilli sauce and half of the lemon juice, and cook for an additional 1-2 mins until the sauce is reduced.
+                                                                                        Remove the chicken from the heat.</li>
+                                                                                    <li>If you're using an air-fryer, preheat it to 180C for 4 mins.
+                                                                                        Add the chicken to the air-fryer and cook for 12 mins.
+                                                                                        Drizzle over the chilli sauce and half the lemon juice and cook for an additional 1-2 mins until the chicken is cooked through and the sauce is reduced.
+                                                                                        Remove the chicken and keep it warm.</li>
+                                                                                    <li>While the chicken is cooking, toast the buns in the dry frying pan for 30 seconds.
+                                                                                        Transfer them to a plate.
+                                                                                        If you're using an air fryer, put the buns in the air fryer for 1-2 mins until they are warm.
+                                                                                        Increase the air fryer temperature to 200C.
+                                                                                        Add the halloumi to the air fryer basket and cook for 10 mins, turning halfway through, until it's golden.
+                                                                                        Toss the cabbage with the mayo and the remaining lemon juice.</li>
+                                                                                    <li>Spoon the hummus (or dip of your choice) into the toasted buns, then top with the rocket, chilli chicken, halloumi, and peppers.
+                                                                                        Drizzle with a little more chilli sauce, spoon over the cabbage, season with black pepper, and top with the bun lids.
+                                                                                        Serve with any extra cabbage on the side or a green salad.</li>
+                                                                                </ol>
+                                                                                <h4 class="fw-semibold my-1">Time needed:</h6>15 minutes
+                                                                                <br>
+                                                                                <h4 class="fw-semibold my-1">Difficulty</h6>6/10
+                                                                              </p>
+                                                                            </div>
+                                                                            <div class="row align-items-center gy-md-5">
+                                                                                <div class="col-md-6">
+                                                                                  <div class="mt-4 mt-md-0">
+                                                                                    <img
+                                                                                      alt=""
+                                                                                      class="img-fluid rounded my-md-0 my-4"
+                                                                                      src="/web_dev_exam-main/imgs/meals/1.jpg"
+                                                                                      height="300"
+                                                                                      width="550"
+                                                                                    />
+                                                                                  </div>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                  <a class="text-primary fw-semibold text-decoration-none" href=""
+                                                                                    >RECIPE 1</a
+                                                                                  >
+                                                                                  <h2 class="fw-semibold my-1">
+                                                                                    15-minute chicken & halloumi burgers
+                                                                                  </h2>
+                                                                                  <div class="text-muted">10.10.2017</div>
+                                                                                  <h4 class="fw-semibold my-1">Instructions</h4>
+                                                                                  <p class="my-4">
+                                                                                    <ol>
+                                                                                        <li>Put the chicken breasts between two pieces of baking parchment and use a rolling pin to gently bash them until they are approximately 1cm thick.
+                                                                                            Cut each chicken breast into two even pieces.</li>
+                                                                                        <li>If you're using a frying pan, heat two frying pans over medium-high heat, with one of them containing oil.
+                                                                                            Fry the chicken in the oiled pan for 3-4 mins on each side until they are cooked through.Season the chicken, reduce the heat, drizzle in the chilli sauce and half of the lemon juice, and cook for an additional 1-2 mins until the sauce is reduced.
+                                                                                            Remove the chicken from the heat.</li>
+                                                                                        <li>If you're using an air-fryer, preheat it to 180C for 4 mins.
+                                                                                            Add the chicken to the air-fryer and cook for 12 mins.
+                                                                                            Drizzle over the chilli sauce and half the lemon juice and cook for an additional 1-2 mins until the chicken is cooked through and the sauce is reduced.
+                                                                                            Remove the chicken and keep it warm.</li>
+                                                                                        <li>While the chicken is cooking, toast the buns in the dry frying pan for 30 seconds.
+                                                                                            Transfer them to a plate.
+                                                                                            If you're using an air fryer, put the buns in the air fryer for 1-2 mins until they are warm.
+                                                                                            Increase the air fryer temperature to 200C.
+                                                                                            Add the halloumi to the air fryer basket and cook for 10 mins, turning halfway through, until it's golden.
+                                                                                            Toss the cabbage with the mayo and the remaining lemon juice.</li>
+                                                                                        <li>Spoon the hummus (or dip of your choice) into the toasted buns, then top with the rocket, chilli chicken, halloumi, and peppers.
+                                                                                            Drizzle with a little more chilli sauce, spoon over the cabbage, season with black pepper, and top with the bun lids.
+                                                                                            Serve with any extra cabbage on the side or a green salad.</li>
+                                                                                    </ol>
+                                                                                    <h4 class="fw-semibold my-1">Time needed:</h6>15 minutes
+                                                                                    <br>
+                                                                                    <h4 class="fw-semibold my-1">Difficulty</h6>6/10
+                                                                                  </p>
+                                                                                </div>
+                                                                                <div class="row align-items-center gy-md-5">
+                                                                                    <div class="col-md-6">
+                                                                                      <div class="mt-4 mt-md-0">
+                                                                                        <img
+                                                                                          alt=""
+                                                                                          class="img-fluid rounded my-md-0 my-4"
+                                                                                          src="/web_dev_exam-main/imgs/meals/1.jpg"
+                                                                                          height="300"
+                                                                                          width="550"
+                                                                                        />
+                                                                                      </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-6">
+                                                                                      <a class="text-primary fw-semibold text-decoration-none" href=""
+                                                                                        >RECIPE 1</a
+                                                                                      >
+                                                                                      <h2 class="fw-semibold my-1">
+                                                                                        15-minute chicken & halloumi burgers
+                                                                                      </h2>
+                                                                                      <div class="text-muted">10.10.2017</div>
+                                                                                      <h4 class="fw-semibold my-1">Instructions</h4>
+                                                                                      <p class="my-4">
+                                                                                        <ol>
+                                                                                            <li>Put the chicken breasts between two pieces of baking parchment and use a rolling pin to gently bash them until they are approximately 1cm thick.
+                                                                                                Cut each chicken breast into two even pieces.</li>
+                                                                                            <li>If you're using a frying pan, heat two frying pans over medium-high heat, with one of them containing oil.
+                                                                                                Fry the chicken in the oiled pan for 3-4 mins on each side until they are cooked through.Season the chicken, reduce the heat, drizzle in the chilli sauce and half of the lemon juice, and cook for an additional 1-2 mins until the sauce is reduced.
+                                                                                                Remove the chicken from the heat.</li>
+                                                                                            <li>If you're using an air-fryer, preheat it to 180C for 4 mins.
+                                                                                                Add the chicken to the air-fryer and cook for 12 mins.
+                                                                                                Drizzle over the chilli sauce and half the lemon juice and cook for an additional 1-2 mins until the chicken is cooked through and the sauce is reduced.
+                                                                                                Remove the chicken and keep it warm.</li>
+                                                                                            <li>While the chicken is cooking, toast the buns in the dry frying pan for 30 seconds.
+                                                                                                Transfer them to a plate.
+                                                                                                If you're using an air fryer, put the buns in the air fryer for 1-2 mins until they are warm.
+                                                                                                Increase the air fryer temperature to 200C.
+                                                                                                Add the halloumi to the air fryer basket and cook for 10 mins, turning halfway through, until it's golden.
+                                                                                                Toss the cabbage with the mayo and the remaining lemon juice.</li>
+                                                                                            <li>Spoon the hummus (or dip of your choice) into the toasted buns, then top with the rocket, chilli chicken, halloumi, and peppers.
+                                                                                                Drizzle with a little more chilli sauce, spoon over the cabbage, season with black pepper, and top with the bun lids.
+                                                                                                Serve with any extra cabbage on the side or a green salad.</li>
+                                                                                        </ol>
+                                                                                        <h4 class="fw-semibold my-1">Time needed:</h6>15 minutes
+                                                                                        <br>
+                                                                                        <h4 class="fw-semibold my-1">Difficulty</h6>6/10
+                                                                                      </p>
+                                                                                    </div>
+                                                                                    <div class="row align-items-center gy-md-5">
+                                                                                        <div class="col-md-6">
+                                                                                          <div class="mt-4 mt-md-0">
+                                                                                            <img
+                                                                                              alt=""
+                                                                                              class="img-fluid rounded my-md-0 my-4"
+                                                                                              src="/web_dev_exam-main/imgs/meals/1.jpg"
+                                                                                              height="300"
+                                                                                              width="550"
+                                                                                            />
+                                                                                          </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                          <a class="text-primary fw-semibold text-decoration-none" href=""
+                                                                                            >RECIPE 1</a
+                                                                                          >
+                                                                                          <h2 class="fw-semibold my-1">
+                                                                                            15-minute chicken & halloumi burgers
+                                                                                          </h2>
+                                                                                          <div class="text-muted">10.10.2017</div>
+                                                                                          <h4 class="fw-semibold my-1">Instructions</h4>
+                                                                                          <p class="my-4">
+                                                                                            <ol>
+                                                                                                <li>Put the chicken breasts between two pieces of baking parchment and use a rolling pin to gently bash them until they are approximately 1cm thick.
+                                                                                                    Cut each chicken breast into two even pieces.</li>
+                                                                                                <li>If you're using a frying pan, heat two frying pans over medium-high heat, with one of them containing oil.
+                                                                                                    Fry the chicken in the oiled pan for 3-4 mins on each side until they are cooked through.Season the chicken, reduce the heat, drizzle in the chilli sauce and half of the lemon juice, and cook for an additional 1-2 mins until the sauce is reduced.
+                                                                                                    Remove the chicken from the heat.</li>
+                                                                                                <li>If you're using an air-fryer, preheat it to 180C for 4 mins.
+                                                                                                    Add the chicken to the air-fryer and cook for 12 mins.
+                                                                                                    Drizzle over the chilli sauce and half the lemon juice and cook for an additional 1-2 mins until the chicken is cooked through and the sauce is reduced.
+                                                                                                    Remove the chicken and keep it warm.</li>
+                                                                                                <li>While the chicken is cooking, toast the buns in the dry frying pan for 30 seconds.
+                                                                                                    Transfer them to a plate.
+                                                                                                    If you're using an air fryer, put the buns in the air fryer for 1-2 mins until they are warm.
+                                                                                                    Increase the air fryer temperature to 200C.
+                                                                                                    Add the halloumi to the air fryer basket and cook for 10 mins, turning halfway through, until it's golden.
+                                                                                                    Toss the cabbage with the mayo and the remaining lemon juice.</li>
+                                                                                                <li>Spoon the hummus (or dip of your choice) into the toasted buns, then top with the rocket, chilli chicken, halloumi, and peppers.
+                                                                                                    Drizzle with a little more chilli sauce, spoon over the cabbage, season with black pepper, and top with the bun lids.
+                                                                                                    Serve with any extra cabbage on the side or a green salad.</li>
+                                                                                            </ol>
+                                                                                            <h4 class="fw-semibold my-1">Time needed:</h6>15 minutes
+                                                                                            <br>
+                                                                                            <h4 class="fw-semibold my-1">Difficulty</h6>6/10
+                                                                                          </p>
+                                                                                        </div>
+
+           
+      </section>
+    </main>
+    <footer class="py-4">
+      <div class="container">
+        <div class="row py-4">
+          <div class="col-12 col-lg-3 mb-4 mb-lg-0">
+            <img
+              alt="Free Frontend Logo"
+              class="img-fluid mb-3"
+              height=""
+              src="https://freefrontend.dev/wp-content/uploads/free-frontend-logo.png"
+              width="300"
+            />
+            <p class="small mb-1">Mountain View</p>
+            <p class="small mb-1">California, United States</p>
+            <p class="small mb-1">Tel: +1 123-456-7890</p>
+            <p class="small mb-0">
+              <a class="text-dark text-decoration-none" href=""
+                >hello@yourdomain.com</a
+              >
+            </p>
+          </div>
+          <div class="col-6 col-lg-2 mb-4 mb-lg-0">
+            <h4>Quick Links</h4>
+            <ul class="list-unstyled">
+              <li class="mb-1">
+                <a class="text-dark text-decoration-none" href="">Home</a>
+              </li>
+              <li class="mb-1">
+                <a class="text-dark text-decoration-none" href="">About</a>
+              </li>
+              <li class="mb-1">
+                <a class="text-dark text-decoration-none" href="">Shop</a>
+              </li>
+              <li class="mb-1">
+                <a class="text-dark text-decoration-none" href="">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2 mb-4 mb-lg-0">
+            <h4>Useful Info</h4>
+            <ul class="list-unstyled">
+              <li class="mb-1">
+                <a class="text-dark text-decoration-none" href=""
+                  >How it Works</a
+                >
+              </li>
+              <li class="mb-1">
+                <a class="text-dark text-decoration-none" href="">FAQ</a>
+              </li>
+              <li class="mb-0">
+                <a class="text-dark text-decoration-none" href="">Contacts</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2 mb-4 mb-lg-0">
+            <h4>My Account</h4>
+            <ul class="list-unstyled">
+              <li class="mb-1">
+                <a class="text-dark text-decoration-none" href="">Get Help</a>
+              </li>
+              <li class="mb-1">
+                <a class="text-dark text-decoration-none" href="">My Orders</a>
+              </li>
+              <li class="mb-1">
+                <a class="text-dark text-decoration-none" href=""
+                  >Track Order</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-lg-3">
+            <div class="border-top pt-4 d-lg-none"></div>
+            <h4>Subscribe</h4>
+            <div class="input-group mb-2">
+              <input
+                class="form-control bg-light"
+                placeholder="Email address"
+                type="text"
+              />
+              <button class="btn btn-primary" type="button">Subscribe</button>
+            </div>
+            <p class="small text-muted mb-0">
+              Sign up for our newsletter to get the latest updates on features
+              and releases.
+            </p>
+          </div>
+        </div>
+        <div
+          class="d-lg-flex align-item-ceneter justify-content-between border-top py-3 py-lg-2 mt-lg-5"
+        >
+          <div class="small mb-2 mb-lg-0 text-muted">
+            © 2023 FreeFrontend.dev. All rights reserved.
+          </div>
+          <div class="small">
+            <a
+              class="d-block d-lg-inline text-muted ms-lg-3 mb-2 mb-lg-0"
+              href=""
+              >Privacy Policy</a
+            >
+            <a
+              class="d-block d-lg-inline text-muted ms-lg-3 mb-2 mb-lg-0"
+              href=""
+              >Terms of Service</a
+            >
+          </div>
+          <div class="d-none d-lg-block ms-auto">
+            <a class="me-2" href=""
+              ><svg
+                class="bi bi-pinterest text-primary"
+                fill="currentColor"
+                height="16"
+                viewbox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0z"
+                ></path></svg
+            ></a>
+            <a class="me-2" href=""
+              ><svg
+                class="bi bi-twitter text-primary"
+                fill="currentColor"
+                height="16"
+                viewbox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                ></path></svg
+            ></a>
+            <a class="me-2" href=""
+              ><svg
+                class="bi bi-facebook text-primary"
+                fill="currentColor"
+                height="16"
+                viewbox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                ></path></svg
+            ></a>
+          </div>
+          <div class="d-lg-none">
+            <a class="me-2" href=""
+              ><svg
+                class="bi bi-pinterest text-primary"
+                fill="currentColor"
+                height="16"
+                viewbox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0z"
+                ></path></svg
+            ></a>
+            <a class="me-2" href=""
+              ><svg
+                class="bi bi-twitter text-primary"
+                fill="currentColor"
+                height="16"
+                viewbox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                ></path></svg
+            ></a>
+            <a class="me-2" href=""
+              ><svg
+                class="bi bi-facebook text-primary"
+                fill="currentColor"
+                height="16"
+                viewbox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                ></path></svg
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

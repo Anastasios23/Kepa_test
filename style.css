@@ -1,0 +1,28 @@
+.carousel-container {
+  margin: auto;
+  width: 80%;
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.carousel-item.active img {
+  width: 100%;
+}
+
+.carousel-item:not(.active) img {
+  width: 80%;
+  position: absolute;
+  top: 0;
+  left: 10%;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.carousel-item:not(.active) img:hover {
+  width: 90%;
+  left: 5%;
+  opacity: 0.8;
+  cursor: pointer;
+}
