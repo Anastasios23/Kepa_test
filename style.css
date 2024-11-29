@@ -108,7 +108,7 @@ hr {
 }
 
 .recipe-modal::-webkit-scrollbar-track {
-  background-color: rgba(171, 180, 228, 0.1);
+  background-color: rgba(237, 238, 244, 0.1);
   border-radius: 4px;
 }
 
@@ -129,7 +129,7 @@ hr {
 }
 
 .loader__text {
-  color: white;
+  color: rgb(62, 41, 185);
   font-weight: bold;
   font-size: 18px;
 }
